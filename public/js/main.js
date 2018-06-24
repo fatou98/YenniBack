@@ -20,7 +20,7 @@ $(document).ready(function() {
     };
     if (document.getElementById("service-select")) {
         $('select').niceSelect();
-    };    
+    };
 
     //------- Lightbox  js --------//  
 
@@ -41,10 +41,10 @@ $(document).ready(function() {
 
     // ------- Datepicker  js --------//  
 
-      $( function() {
-        $( "#datepicker1" ).datepicker();
-        $( "#datepicker2" ).datepicker();
-      } );
+    $(function() {
+        $("#datepicker1").datepicker();
+        $("#datepicker2").datepicker();
+    });
 
 
     //------- Superfish nav menu  js --------//  
@@ -69,7 +69,7 @@ $(document).ready(function() {
     });
 
 
-     $(document).on('click', '.accordion > dt > a', function(e) {
+    $(document).on('click', '.accordion > dt > a', function(e) {
 
         var current = $(this).parent().next("dd");
         $(this).parents(".accordion").find("dt > a").removeClass("active");
@@ -84,22 +84,22 @@ $(document).ready(function() {
     //------- Tabs Js --------//  
     if (document.getElementById("horizontalTab")) {
 
-    $('#horizontalTab').jqTabs({
-        direction: 'horizontal',
-        duration: 200
-    });
-    
-    };  
+        $('#horizontalTab').jqTabs({
+            direction: 'horizontal',
+            duration: 200
+        });
+
+    };
 
 
     //------- Owl Carusel  js --------//  
 
     $('.active-review-carusel').owlCarousel({
-        items:1,
-        loop:true,
-        autoplay:true,
-        autoplayHoverPause: true,        
-        margin:30,
+        items: 1,
+        loop: true,
+        autoplay: true,
+        autoplayHoverPause: true,
+        margin: 30,
         dots: true
     });
 
@@ -115,7 +115,7 @@ $(document).ready(function() {
             },
             455: {
                 items: 2
-            },            
+            },
             768: {
                 items: 3,
             },
@@ -126,7 +126,7 @@ $(document).ready(function() {
                 items: 5,
             }
         }
-    }); 
+    });
 
     //------- Mobile Nav  js --------//  
 
@@ -155,7 +155,7 @@ $(document).ready(function() {
             $('#mobile-body-overly').toggle();
         });
 
-            $(document).on('click', function(e) {
+        $(document).on('click', function(e) {
             var container = $("#mobile-nav, #mobile-nav-toggle");
             if (!container.is(e.target) && container.has(e.target).length === 0) {
                 if ($('body').hasClass('mobile-nav-active')) {
@@ -249,8 +249,8 @@ $(document).ready(function() {
 
         function init() {
             var mapOptions = {
-                zoom: 11,
-                center: new google.maps.LatLng(40.6700, -73.9400), // New York
+                zoom: 14,
+                center: new google.maps.LatLng(14.723030, -17.472843), // New York
                 styles: [{
                     "featureType": "water",
                     "elementType": "geometry",
@@ -371,7 +371,7 @@ $(document).ready(function() {
             var mapElement = document.getElementById('map');
             var map = new google.maps.Map(mapElement, mapOptions);
             var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(40.6700, -73.9400),
+                position: new google.maps.LatLng(14.723030, -17.472843),
                 map: map,
                 title: 'Snazzy!'
             });
