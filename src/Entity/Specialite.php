@@ -1,0 +1,40 @@
+<?php
+
+namespace App\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity(repositoryClass="App\Repository\SpecialiteRepository")
+ */
+class Specialite
+{
+    /**
+     * @ORM\Id()
+     * @ORM\GeneratedValue()
+     * @ORM\Column(type="integer")
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
+    private $nomspecialite;
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function getNomspecialite(): ?string
+    {
+        return $this->nomspecialite;
+    }
+
+    public function setNomspecialite(string $nomspecialite): self
+    {
+        $this->nomspecialite = $nomspecialite;
+
+        return $this;
+    }
+}
