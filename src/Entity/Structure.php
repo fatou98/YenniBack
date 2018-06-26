@@ -26,6 +26,16 @@ class Structure
      */
     private $TypeStructure;
 
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
+    private $adresse;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $tel;
+
 
     public function getId()
     {
@@ -60,6 +70,30 @@ class Structure
     public function setTypeStructure($TypeStructure)
     {
         $this->TypeStructure = $TypeStructure;
+
+        return $this;
+    }
+
+    public function getAdresse(): ?string
+    {
+        return $this->adresse;
+    }
+
+    public function setAdresse(string $adresse): self
+    {
+        $this->adresse = $adresse;
+
+        return $this;
+    }
+
+    public function getTel(): ?int
+    {
+        return $this->tel;
+    }
+
+    public function setTel(int $tel): self
+    {
+        $this->tel = $tel;
 
         return $this;
     }
