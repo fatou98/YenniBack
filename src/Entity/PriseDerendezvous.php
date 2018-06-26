@@ -49,7 +49,7 @@ class PriseDerendezvous
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $message;
+    private $motif;
      /**
      * @ORM\Column(type="string", length=50)
      */
@@ -136,14 +136,14 @@ class PriseDerendezvous
         return $this;
     }
 
-    public function getMessage(): ?string
+    public function getMotif(): ?string
     {
-        return $this->message;
+        return $this->motif;
     }
 
-    public function setMessage(string $message): self
+    public function setMotif(string $motif): self
     {
-        $this->message = $message;
+        $this->motif = $motif;
 
         return $this;
     }

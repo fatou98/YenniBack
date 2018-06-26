@@ -41,4 +41,28 @@ class AccueilController extends Controller
             'controller_name' => 'AccueilController',
         ]);
     }
-}
+public function PrisedeRV(Request $request)
+            {
+                $em = $this->getDoctrine()->getManager();
+            if($request->isMethod('POST')) {
+                if($_POST['form']=''){
+                    extract($_POST);
+                    $priserendezvous = new  PriseDerendezvous();
+                    $priserendezvous->setNomComplet($nomcomplet);
+                    $priserendezvous->setTelephone($tel);
+                    $priserendezvous->setAdresseMail($email);
+                    $priserendezvous->setDatenaiss($date);
+                    $priserendezvous->setSpecialite($specialite);
+                    $priserendezvous->setDaterv(new \DateTime('now'));
+                    $priserendezvous->setMotif($motif);
+
+                    $em->persist( $priserendezvous);
+                    $em->flush();
+                    $bien = $this->getDoctrine()->getManager()->getRepository('accueil/index.html')
+                    ->FindAll();
+                      return $this->render('accueil/index.html.twig', array(
+                        '' => $bien
+
+                       ));
+                        }
+                    }}}

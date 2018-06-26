@@ -48,12 +48,12 @@
 							</ul>
 						</div>
 						<div class="col-lg-6 col-md-6 appointment-right pt-60 pb-60">
-							<form class="form-wrap" action="#">
+							<form class="form-wrap" action="#" Method="POST" >
 								<h3 class="pb-20 text-center mb-30">Prendre Rendez-Vous</h3>		
-								<input type="text" class="form-control" name="name" placeholder="Nom Patient" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Patient Name'" >
-								<input type="text" class="form-control" name="phone" placeholder="Telephone " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone'" >
+								<input type="text" class="form-control" name="nomcomplet" placeholder="Nom Complet" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Patient Name'" >
+								<input type="text" class="form-control" name="tel" placeholder="Telephone " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone'" >
 								<input type="email" class="form-control" name="email" placeholder="Adresse Mail" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address'" >
-								<input id="datepicker1" name="dop" class="dates form-control"  placeholder="Date de Naissance" type="text">   
+								<input id="datepicker1" name="date" class="dates form-control"  placeholder="Date de Naissance" type="text">   
 								<div class="form-select" id="service-select">
 									<select>
 										<option data-display="">Specialite</option>
@@ -63,8 +63,8 @@
 										<option value="4">Ophthalmology</option>
 									</select>
 								</div>	
-								<input id="datepicker2" class="dates form-control"  placeholder="Date rendez-vous" type="text">  
-								<textarea name="messege" class="" rows="5" placeholder="Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'"></textarea> 
+								<input id="datepicker2" class="dates form-control" name="rv"  placeholder="Date rendez-vous" type="text">  
+								<textarea name="motif" class="" rows="5" placeholder="Motif" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'"></textarea> 
 								<button class="primary-btn text-uppercase">Confirmez Votre Rendez-Vous</button>
 							</form>
 						</div>
