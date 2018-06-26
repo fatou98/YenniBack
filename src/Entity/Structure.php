@@ -43,4 +43,24 @@ class Structure
 
         return $this;
     }
+
+    /**
+     * Get the value of TypeStructure
+     */ 
+    public function getTypeStructure()
+    {
+        return $this->TypeStructure;
+    }
+
+    /**
+     * Set the value of TypeStructure
+     *
+     * @return  self
+     */ 
+    public function setTypeStructure($TypeStructure)
+    {
+        $this->TypeStructure = $TypeStructure;
+
+        return $this;
+    }
 }

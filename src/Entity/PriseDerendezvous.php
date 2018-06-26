@@ -147,4 +147,24 @@ class PriseDerendezvous
 
         return $this;
     }
+
+    /**
+     * Get the value of SpecialiteStucture
+     */ 
+    public function getSpecialiteStucture()
+    {
+        return $this->SpecialiteStucture;
+    }
+
+    /**
+     * Set the value of SpecialiteStucture
+     *
+     * @return  self
+     */ 
+    public function setSpecialiteStucture($SpecialiteStucture)
+    {
+        $this->SpecialiteStucture = $SpecialiteStucture;
+
+        return $this;
+    }
 }

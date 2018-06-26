@@ -35,4 +35,64 @@ class SpecialiteStucture
     private $Structure;
 
 
+
+    /**
+     * Get the value of id
+     */ 
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set the value of id
+     *
+     * @return  self
+     */ 
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Specialite
+     */ 
+    public function getSpecialite()
+    {
+        return $this->Specialite;
+    }
+
+    /**
+     * Set the value of Specialite
+     *
+     * @return  self
+     */ 
+    public function setSpecialite($Specialite)
+    {
+        $this->Specialite = $Specialite;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Structure
+     */ 
+    public function getStructure()
+    {
+        return $this->Structure;
+    }
+
+    /**
+     * Set the value of Structure
+     *
+     * @return  self
+     */ 
+    public function setStructure($Structure)
+    {
+        $this->Structure = $Structure;
+
+        return $this;
+    }
 }

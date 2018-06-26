@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use App\Entity\PriseDerendezvous;
+use Symfony\Component\HttpFoundation\Request;
 
 class AccueilController extends Controller
 {
@@ -56,7 +58,7 @@ public function PrisedeRV(Request $request)
                     $priserendezvous->setDaterv(new \DateTime('now'));
                     $priserendezvous->setMotif($motif);
 
-                    $em->persist( $priserendezvous);
+                    $em->persist($priserendezvous);
                     $em->flush();
                     $bien = $this->getDoctrine()->getManager()->getRepository('accueil/index.html')
                     ->FindAll();
