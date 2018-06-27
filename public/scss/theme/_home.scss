@@ -8,22 +8,21 @@
 
 
 .alert-msg {
-    color: #008000;
+    color: turquoise;
 }
 
 
 .p1-gradient-bg {
-  background: -moz-linear-gradient( 90deg, rgb(100,187,0) 0%, rgb(171,229,0) 100%);
-  background: -webkit-linear-gradient( 90deg, rgb(100,187,0) 0%, rgb(171,229,0) 100%);
-  background: -ms-linear-gradient( 90deg, rgb(100,187,0) 0%, rgb(171,229,0) 100%);
+  background: -moz-linear-gradient( 90deg, turquoise 0%, rgb(157, 228, 212) 100%);
+  background: -webkit-linear-gradient( 90deg, turquoise 0%, rgb(157, 228, 212) 100%);
+  background: -ms-linear-gradient( 90deg, turquoise 0%, rgb(157, 228, 212) 100%);
 }
 
 
 .p1-gradient-color {
-    background: -moz-linear-gradient( 90deg, rgb(100,187,0) 0%, rgb(171,229,0) 100%);
-    background: -webkit-linear-gradient( 90deg, rgb(100,187,0) 0%, rgb(171,229,0) 100%);
-    background: -ms-linear-gradient( 90deg, rgb(100,187,0) 0%, rgb(171,229,0) 100%);
-    -webkit-background-clip: text;
+    background: -moz-linear-gradient( 90deg, turquoise 0%, rgb(157, 228, 212) 100%);
+    background: -webkit-linear-gradient( 90deg, turquoise 0%, rgb(157, 228, 212) 100%);
+    background: -ms-linear-gradient( 90deg, turquoise 0%, rgb(157, 228, 212) 100%);
     -webkit-text-fill-color: transparent;
 }
 

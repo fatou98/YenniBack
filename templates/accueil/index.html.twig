@@ -1,1 +1,13 @@
 {% extends 'layoutaccueil.html.twig' %}
+{% block select %}
+<div class="form-select" id="service-select">
+									<select name="specialite">
+										<option data-display="">Specialite</option>
+									{% for specialite in specialites %}
+												<option value="{{specialite.id}}">{{specialite.nomspecialite}}</option>
+
+									{% endfor %}
+										
+									</select>
+								</div>
+{% endblock %}

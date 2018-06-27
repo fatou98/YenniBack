@@ -5,19 +5,12 @@ namespace App\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use App\Entity\PriseDerendezvous;
+use App\Entity\Specialite;
 use Symfony\Component\HttpFoundation\Request;
-
+use App\Repository\SpecialiteStuctureRepository;
 class AccueilController extends Controller
 {
-    /**
-     * @Route("/accueil", name="accueil")
-     */
-    public function index()
-    {
-        return $this->render('accueil/index.html.twig', [
-            'controller_name' => 'AccueilController',
-        ]);
-    }
+    
     /**
      * @Route("/apropos", name="propos")
      */
@@ -48,19 +41,21 @@ class AccueilController extends Controller
      */
 public function PrisedeRV(Request $request)
             {
+
+               
         $em = $this->getDoctrine()->getManager();
+        $specialitet=$em->getRepository(Specialite::class)->findAll();;
             if($request->isMethod('POST')) {
                 if(isset($_POST['ajouter'])){
                     extract($_POST);
-                    var_dump($nomcomplet);
-                    die();
+                $idspec=$em->getRepository(Specialite::class)->findById(array('id'=>$specialite));
+
                     $priserendezvous = new  PriseDerendezvous();
                     $priserendezvous->setNomComplet($nomcomplet);
-                    //var_dump($nomcomplet);die();
                     $priserendezvous->setTelephone($tel);
                     $priserendezvous->setAdresseMail($email);
-                    $priserendezvous->setDatenaiss($date);
-                    $priserendezvous->setSpecialite($specialite);
+                    $priserendezvous->setDatenaiss(new \DateTime($date));
+                    $priserendezvous->setSpecialite($idspec);
                     $priserendezvous->setDaterv(new \DateTime('now'));
                     $priserendezvous->setMotif($motif);
                     $em->persist($priserendezvous);
@@ -69,9 +64,9 @@ public function PrisedeRV(Request $request)
                    // ->FindAll();
                 }
             }
-                      return $this->render('accueil/index.html.twig', array(
-                      
+                      return $this->render('accueil/index.html.twig',[
+                      'specialites'=>$specialitet
 
-                       ));
+                      ]);
                     }
                 }

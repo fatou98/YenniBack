@@ -54,22 +54,11 @@
 								<input type="text" class="form-control" name="tel" placeholder="Telephone " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone'" >
 								<input type="email" class="form-control" name="email" placeholder="Adresse Mail" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address'" >
 								<input id="datepicker1" name="date" class="dates form-control"  placeholder="Date de Naissance" type="text">   
-								<div class="form-select" id="service-select">
-									<select>
-										<option data-display="">Specialite</option>
-										<option value="1">Generaliste</option>
-										<option value="2">Dentiste</option>
-										<option value="3">Cardiologue</option>
-										<option value="4">Ophthalmology</option>
-									</select>
-								</div>	
+								{% block select %}{% endblock %}
+									
 								<input id="datepicker2" class="dates form-control" name="rv"  placeholder="Date rendez-vous" type="text">  
 								<textarea name="motif" class="" rows="5" placeholder="Motif" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'"></textarea> 
-<<<<<<< HEAD
-								<input type="submit" class="primary-btn text-uppercase" name="cf" value="Confirmer Rendez Vous">
-=======
 								<input type="submit" value="Confirmez Votre Rendez-Vous" name="ajouter" class="primary-btn text-uppercase">
->>>>>>> 42e7da4ddb9cf5df0a4494e37f33de23e4ded955
 							</form>
 						</div>
 					</div>

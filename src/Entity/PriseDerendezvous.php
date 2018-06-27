@@ -42,7 +42,7 @@ class PriseDerendezvous
     private $specialite;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="date")
      */
     private $daterv;
 
@@ -117,7 +117,7 @@ class PriseDerendezvous
         return $this->specialite;
     }
 
-    public function setSpecialite(string $specialite): self
+    public function setSpecialite($specialite): self
     {
         $this->specialite = $specialite;
 
@@ -129,7 +129,7 @@ class PriseDerendezvous
         return $this->daterv;
     }
 
-    public function setDaterv(\DateTimeInterface $daterv): self
+    public function setDaterv($daterv): self
     {
         $this->daterv = $daterv;
 
