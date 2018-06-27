@@ -12,7 +12,7 @@
 								chaque moment	
 							</h1>
 							<p class="pt-10 pb-10 text-white">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua.
+								Hello Docteur Le service Qui Facilite la vie des malades
 							</p>
 							<a href="/apropos" class="primary-btn text-uppercase">Voir Plus</a>
 						</div>										
@@ -48,12 +48,12 @@
 							</ul>
 						</div>
 						<div class="col-lg-6 col-md-6 appointment-right pt-60 pb-60">
-							<form class="form-wrap" action="#">
+							<form class="form-wrap" Method="POST" >
 								<h3 class="pb-20 text-center mb-30">Prendre Rendez-Vous</h3>		
-								<input type="text" class="form-control" name="name" placeholder="Nom Patient" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Patient Name'" >
-								<input type="text" class="form-control" name="phone" placeholder="Telephone " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone'" >
+								<input type="text" class="form-control" name="nomcomplet" placeholder="Nom Complet" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Patient Name'" >
+								<input type="text" class="form-control" name="tel" placeholder="Telephone " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone'" >
 								<input type="email" class="form-control" name="email" placeholder="Adresse Mail" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address'" >
-								<input id="datepicker1" name="dop" class="dates form-control"  placeholder="Date de Naissance" type="text">   
+								<input id="datepicker1" name="date" class="dates form-control"  placeholder="Date de Naissance" type="text">   
 								<div class="form-select" id="service-select">
 									<select>
 										<option data-display="">Specialite</option>
@@ -63,9 +63,9 @@
 										<option value="4">Ophthalmology</option>
 									</select>
 								</div>	
-								<input id="datepicker2" class="dates form-control"  placeholder="Date rendez-vous" type="text">  
-								<textarea name="messege" class="" rows="5" placeholder="Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'"></textarea> 
-								<button class="primary-btn text-uppercase">Confirmez Votre Rendez-Vous</button>
+								<input id="datepicker2" class="dates form-control" name="rv"  placeholder="Date rendez-vous" type="text">  
+								<textarea name="motif" class="" rows="5" placeholder="Motif" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'"></textarea> 
+								<input type="submit" value="Confirmez Votre Rendez-Vous" name="ajouter" class="primary-btn text-uppercase">
 							</form>
 						</div>
 					</div>
@@ -193,7 +193,7 @@
 		                <div class="menu-content pb-70 col-lg-7">
 		                    <div class="title text-center">
 		                        <h1 class="mb-10">Nos Partenaires</h1>
-		                        <p>Hello travaille avec les professionel de la sante au senegal  </p>
+		                        <p>Hello Docteur travaille avec les professionel de la sante au senegal  </p>
 		                    </div>
 		                </div>
 		            </div>
@@ -279,7 +279,7 @@
 						<div class="col-md-12 pb-60 header-text text-center">
 							<h1 class="mb-10 text-white">Temoignages de nos clients</h1>
 							<p class="text-white">
-								Who are in extremely love with eco friendly system..
+								Ils nous ont fait confiance
 							</p>
 						</div>
 					</div>			

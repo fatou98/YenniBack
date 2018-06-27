@@ -2474,7 +2474,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 /*-------- Start Banner Area ------------*/
 .banner-area {
-  background: url(../img/hero-bg.jpg) right;
+  background: url(../img/r.jpg) right;
   background-size: cover;
 }
 
@@ -2825,7 +2825,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 /*--------- end team area  -------------*/
 /*--------- start feedback  area -------------*/
 .feedback-area {
-  background: url(../img/feedback-bg.jpg) center;
+  background: url(../img/yenni.jpg) center;
   background-size: cover;
 }
 
@@ -3038,7 +3038,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .about-banner {
-  background: url(../img/top-banner.jpg) right no-repeat;
+  background: url(../img/r.jpg) right no-repeat;
   background-size: cover;
 }
 
@@ -3158,7 +3158,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   top: 50%;
   right: 10px;
   font-family: 'FontAwesome';
-  speak: none;
+  speak-as: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -3231,7 +3231,7 @@ dl.accordion.time-line:before {
   top: 50%;
   left: 0;
   font-family: 'icomoon';
-  speak: none;
+  speak-as: none;
   font-style: normal;
   font-weight: bold;
   font-variant: normal;
