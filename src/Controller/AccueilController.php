@@ -51,13 +51,13 @@ public function PrisedeRV(Request $request)
                     extract($_POST);
                     $priserendezvous = new  PriseDerendezvous();
                     $priserendezvous->setNomComplet($nomcomplet);
+                    //var_dump($nomcomplet);die();
                     $priserendezvous->setTelephone($tel);
                     $priserendezvous->setAdresseMail($email);
                     $priserendezvous->setDatenaiss($date);
                     $priserendezvous->setSpecialite($specialite);
                     $priserendezvous->setDaterv(new \DateTime('now'));
                     $priserendezvous->setMotif($motif);
-
                     $em->persist($priserendezvous);
                     $em->flush();
                     $bien = $this->getDoctrine()->getManager()->getRepository('accueil/index.html')
