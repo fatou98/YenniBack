@@ -43,12 +43,17 @@ class AccueilController extends Controller
             'controller_name' => 'AccueilController',
         ]);
     }
+    /**
+     * @Route("/addrdv", name="addrdv")
+     */
 public function PrisedeRV(Request $request)
             {
-                $em = $this->getDoctrine()->getManager();
+        $em = $this->getDoctrine()->getManager();
             if($request->isMethod('POST')) {
-                if($_POST['form']=''){
+                if(isset($_POST['ajouter'])){
                     extract($_POST);
+                    var_dump($nomcomplet);
+                    die();
                     $priserendezvous = new  PriseDerendezvous();
                     $priserendezvous->setNomComplet($nomcomplet);
                     //var_dump($nomcomplet);die();
@@ -60,11 +65,13 @@ public function PrisedeRV(Request $request)
                     $priserendezvous->setMotif($motif);
                     $em->persist($priserendezvous);
                     $em->flush();
-                    $bien = $this->getDoctrine()->getManager()->getRepository('accueil/index.html')
-                    ->FindAll();
+                   // $bien = $this->getDoctrine()->getManager()->getRepository('accueil/index.html')
+                   // ->FindAll();
+                }
+            }
                       return $this->render('accueil/index.html.twig', array(
-                        '' => $bien
+                      
 
                        ));
-                        }
-                    }}}
+                    }
+                }
