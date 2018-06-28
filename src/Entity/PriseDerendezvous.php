@@ -36,11 +36,7 @@ class PriseDerendezvous
      */
     private $datenaiss;
 
-    /**
-     * @ORM\Column(type="string", length=50)
-     */
-    private $specialite;
-
+   
     /**
      * @ORM\Column(type="date")
      */
@@ -54,10 +50,10 @@ class PriseDerendezvous
      * @ORM\Column(type="string", length=50)
      */
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\SpecialiteStucture")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Specialite")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $SpecialiteStucture;
+    private $specialite;
 
     public function getId()
     {
@@ -148,23 +144,5 @@ class PriseDerendezvous
         return $this;
     }
 
-    /**
-     * Get the value of SpecialiteStucture
-     */ 
-    public function getSpecialiteStucture()
-    {
-        return $this->SpecialiteStucture;
-    }
-
-    /**
-     * Set the value of SpecialiteStucture
-     *
-     * @return  self
-     */ 
-    public function setSpecialiteStucture($SpecialiteStucture)
-    {
-        $this->SpecialiteStucture = $SpecialiteStucture;
-
-        return $this;
-    }
+    
 }

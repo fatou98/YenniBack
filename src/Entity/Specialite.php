@@ -41,4 +41,5 @@ class Specialite
         return $this->nomspecialite;
 
     }
+   
 }

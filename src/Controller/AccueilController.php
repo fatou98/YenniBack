@@ -37,7 +37,7 @@ class AccueilController extends Controller
         ]);
     }
     /**
-     * @Route("/addrdv", name="addrdv")
+     * @Route("/accueil", name="accueil")
      */
 public function PrisedeRV(Request $request)
             {
@@ -55,7 +55,7 @@ public function PrisedeRV(Request $request)
                     $priserendezvous->setTelephone($tel);
                     $priserendezvous->setAdresseMail($email);
                     $priserendezvous->setDatenaiss(new \DateTime($date));
-                    $priserendezvous->setSpecialite($idspec);
+                    $priserendezvous->setSpecialite($idspec[0]);
                     $priserendezvous->setDaterv(new \DateTime('now'));
                     $priserendezvous->setMotif($motif);
                     $em->persist($priserendezvous);
