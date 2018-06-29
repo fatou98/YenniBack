@@ -263,4 +263,3 @@ class User implements AdvancedUserInterface, \Serializable {
         return $this;
     }
 }
-

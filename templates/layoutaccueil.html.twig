@@ -57,7 +57,15 @@
 								{% block select %}{% endblock %}
 									
 								<input id="datepicker2" class="dates form-control" name="rv"  placeholder="Date rendez-vous" type="text">  
-								<textarea name="motif" class="" rows="5" placeholder="Motif" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'"></textarea> 
+								<div class="form-select" id="service-select">
+									<select name="motif">
+										<option="">Specialite</option>
+										<option value="">renouveler un rendez vous</option>
+										<option value="">consultation</option>
+										<option value="">prendre rv</option>
+										<option value="">renouveler un rendez vous</option>
+									</select>
+								</div>
 								<input type="submit" value="Confirmez Votre Rendez-Vous" name="ajouter" class="primary-btn text-uppercase">
 							</form>
 						</div>
