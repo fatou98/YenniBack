@@ -158,9 +158,7 @@ class User implements AdvancedUserInterface, \Serializable {
         return $this->email;
     }
 
-    function getPlainPassword() {
-        return $this->plainPassword;
-    }
+  
 
     function getIsActive() {
         return $this->isActive;
@@ -174,9 +172,16 @@ class User implements AdvancedUserInterface, \Serializable {
         $this->email = $email;
     }
 
-    function setPlainPassword($plainPassword) {
-        $this->plainPassword = $plainPassword;
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
     }
+
+    public function setPlainPassword($password)
+    {
+        $this->plainPassword = $password;
+    }
+
 
     function setIsActive($isActive) {
         $this->isActive = $isActive;

@@ -23,11 +23,13 @@ class SecurityController extends Controller {
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             // 3) Encode the password (you could also do this via Doctrine listener)
-            $password = $passwordEncoder->encodePassword($user, $user->getPlainPassword());
-            $user->setPassword($password);
+           // 3) Encode the password (you could also do this via Doctrine listener)
+           $password = $passwordEncoder->encodePassword($user, $user->getPlainPassword());
+           $user->setPassword($password);
+
             //on active par défaut
-           // $user->setIsActive(true);
-            //$user->addRole("ROLE_ADMIN");
+            $user->setIsActive(true);
+            $user->addRole("ROLE_ADMIN");
             // 4) save the User!
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
