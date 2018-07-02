@@ -16,4 +16,13 @@ class MedecinController extends Controller
             'controller_name' => 'MedecinController',
         ]);
     }
+        /**
+     * @Route("/patient", name="patient")
+     */
+    public function patient()
+    {
+        return $this->render('medecin/patient.html.twig', [
+            'controller_name' => 'MedecinController',
+        ]);
+    }
 }
