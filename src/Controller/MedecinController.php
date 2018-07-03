@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use App\Entity\PriseDerendezvous;
+
 
 class MedecinController extends Controller
 {
@@ -12,6 +14,10 @@ class MedecinController extends Controller
      */
     public function index()
     {
+        $em = $this->getDoctrine()->getManager();
+
+        $rv = $em->getRepository(PriseDerendezvous::class)->findAll();
+
         return $this->render('medecin/index.html.twig', [
             'controller_name' => 'MedecinController',
         ]);
