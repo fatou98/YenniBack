@@ -14,13 +14,9 @@ class MedecinController extends Controller
      */
     public function index()
     {
-        $em = $this->getDoctrine()->getManager();
+        $prvs = $this->getDoctrine()->getRepository(PriseDerendezvous::Class)->findAll();
 
-        $rv = $em->getRepository(PriseDerendezvous::class)->findAll();
-
-        return $this->render('medecin/index.html.twig', [
-            'controller_name' => 'MedecinController',
-        ]);
+        return $this->render('medecin/index.html.twig',array('prv'=>$prvs)); 
     }
         /**
      * @Route("/patient", name="patient")

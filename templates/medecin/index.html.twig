@@ -2,9 +2,39 @@
 
 
     {% block content %}
-{% for prisederendezvous in prisederendezvous %}
-<option value="{{nomcomplet.prisederendezvous}}">{{prisederendezvous.nomcomplet}}</option>
 
-									{% endfor %}
-										
+{% for prvs in prv %}
+    <table>
+        <tr>
+            <td>
+                {{ prvs.nomComplet }}
+            </td>
+             <td>
+                {{ prvs.telephone }}
+            </td>
+             <td>
+                {{ prvs.adresseMail }}
+            </td>
+             <td>
+                {{ prvs.datenaiss|date('Y-m-d') }}
+            </td>
+             <td>
+                {{ prvs.daterv|date('Y-m-d') }}
+            </td>
+             <td>
+                {{ prvs.motif }}
+            </td>
+            <td>
+                <a href="/">details</a>
+                <a href="/">suprimer</a>
+            </td>
+        </tr>
+    </table>
+
+{% endfor %}
+
+
+
+
+					
 {% endblock %}

@@ -1,6 +1,53 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<style>
+body{
+    background-image:url('/img/r.jpg');
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position-y:-750px;
+}
+section{
+    margin-left:20%;
+    margin-right:20%;
+    color:white;
+}
+form{
+    background:rgba(128,128,128,0.685);
+    height:200px;
+    width:400px;
+    padding:25px;
+    padding-top:40px;
+    padding-left:40px;
+
+}
+input{
+    border:none;
+    outline:none;
+    background:transparent;
+    border-bottom: solid 1px white;
+    color:white;
+}
+button{
+    border:none;
+   height:38px;
+    font-size:20px;
+    margin:10px;
+    border-radius:5px;
+    background:#007bff;
+    color:white;
+}
+label{
+    width:100px;
+}
+form a{
+  float:right;
+  margin-top:-48px;
+  background:black;
+  color:grey;
+}
+</style>
 
 
 {% if error %}
@@ -14,8 +61,10 @@
 {% endif %}
 <section class="container">
 <div class="row fullscreen d-flex align-items-center justify-content-center">
-          {{form(form)}}
-          <a href="{{path('inscrire')}}">S'Inscrire</a>
+          {{form_start(form)}}
+          {{form_widget(form)}}
+          <a href="{{path('inscrire')}}" class="btn">S'Inscrire</a>
+          {{form_end(form)}}
         </div>
 
 </section>
