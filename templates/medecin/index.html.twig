@@ -2,9 +2,35 @@
 
 
     {% block content %}
+  <table class="table table-striped table-hover" id="datatable3" cellspacing="0" width="100%">
+                    <thead>
 
+<th>Nomcomplet</th>
+<th>Téléphone</th>
+<th>Mail</th>
+<th>DateNais</th>
+<th>Date Rdv</th>
+<th>Motif</th>
+<th>Details</th>
+
+</tr>
+</thead>
+
+<tfoot>
+
+
+<th>Nomcomplet</th>
+<th>Téléphone</th>
+<th>Mail</th>
+<th>DateNais</th>
+<th>Date Rdv</th>
+<th>Motif</th>
+<th>Details</th>
+
+</tfoot>
+
+<tbody>
 {% for prvs in prv %}
-    <table>
         <tr>
             <td>
                 {{ prvs.nomComplet }}
@@ -34,7 +60,6 @@
 {% endfor %}
 
 
-
-
+</tbody>
 					
 {% endblock %}
