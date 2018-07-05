@@ -24,6 +24,7 @@
 <th>Mail</th>
 <th>DateNais</th>
 <th>Date Rdv</th>
+<th>Heure</th>
 <th>Motif</th>
 <th>Details</th>
 
@@ -46,10 +47,13 @@
             </td>
              <td>
                 {{ prvs.daterv|date('Y-m-d') }}
+            </td> <td>
+                {{ prvs.heure }}
             </td>
              <td>
                 {{ prvs.motif }}
             </td>
+           
             <td>
                 <a href="/">details</a>
                 <a href="/">suprimer</a>

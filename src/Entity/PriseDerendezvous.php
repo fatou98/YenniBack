@@ -20,6 +20,10 @@ class PriseDerendezvous
      * @ORM\Column(type="string", length=50)
      */
     private $nomComplet;
+ /**
+     * @ORM\Column(type="string", length=10)
+     */
+    private $heure;
 
     /**
      * @ORM\Column(type="integer")
@@ -145,4 +149,24 @@ class PriseDerendezvous
     }
 
     
+
+    /**
+     * Get the value of heure
+     */ 
+    public function getHeure()
+    {
+        return $this->heure;
+    }
+
+    /**
+     * Set the value of heure
+     *
+     * @return  self
+     */ 
+    public function setHeure($heure)
+    {
+        $this->heure = $heure;
+
+        return $this;
+    }
 }

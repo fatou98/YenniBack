@@ -58,6 +58,7 @@ public function PrisedeRV(Request $request)
                     $priserendezvous->setSpecialite($idspec[0]);
                     $priserendezvous->setDaterv(new \DateTime('now'));
                     $priserendezvous->setMotif($motif);
+                    $priserendezvous->setHeure($heure);
                     $em->persist($priserendezvous);
                     $em->flush();
                    // $bien = $this->getDoctrine()->getManager()->getRepository('accueil/index.html')
