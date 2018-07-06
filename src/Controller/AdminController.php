@@ -23,9 +23,11 @@ class AdminController extends Controller
      */
     public function listesclinique()
     {
+        $user=$this->getUser();
+
         $prvs = $this->getDoctrine()->getRepository(PriseDerendezvous::Class)->findAll();
 
-        return $this->render('admin/listeclinique.html.twig',array('prv'=>$prvs)); 
+        return $this->render('admin/listeclinique.html.twig',array('prv'=>$prvs,'users'=>$user)); 
     }
     /**
      * @Route("/pharmacie", name="pharmacie")
@@ -41,6 +43,7 @@ class AdminController extends Controller
      */
     public function listerendezvous()
     {
+        
         $prvs = $this->getDoctrine()->getRepository(PriseDerendezvous::Class)->findAll();
 
         return $this->render('admin/listerv.html.twig',array('prv'=>$prvs)); 
