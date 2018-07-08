@@ -1,0 +1,80 @@
+{% extends 'layoutaccueil.html.com' %}
+{% block body %}
+
+<section class="banner-area relative" id="home">
+				<div class="overlay overlay-bg"></div>	
+				<div class="container">
+					<div class="row fullscreen d-flex align-items-center justify-content-center">
+						<div class="banner-content col-lg-8 col-md-12">
+							<h1>
+								Nous Nous Soucions De Votre Sante A
+								Chaque Moment.	
+							</h1>
+							<p class="pt-10 pb-10 text-white">
+								Hello Docteur Le Service Qui Facilite La vie Des Malades
+							</p>
+							<a href="/apropos" class="primary-btn text-uppercase">Voir Plus</a>
+						</div>										
+					</div>
+				</div>					
+			</section>
+			<!-- End banner Area -->
+
+			<!-- Start appointment Area -->
+			<section class="appointment-area">			
+				<div class="container">
+					<div class="row justify-content-between align-items-center pb-120 appointment-wrap">
+						<div class="col-lg-5 col-md-6 appointment-left">
+							<h1>
+								Nos Horaires
+							</h1>
+							<p>
+							Conscient et soucieux de votre sante nous sommes ouvert tous les jours
+							</p>
+							<ul class="time-list">
+								<li class="d-flex justify-content-between">
+									<span>lundi-vendredi</span>
+									<span>24h/24h</span>
+								</li>
+								<li class="d-flex justify-content-between">
+									<span>Samedi</span>
+									<span>08.00 am - 10.00 pm</span>
+								</li>
+								<li class="d-flex justify-content-between">
+									<span>Dimanche</span>
+									<span>08.00 am - 10.00 pm</span>
+								</li>																
+							</ul>
+						</div>
+						<div class="col-lg-6 col-md-6 appointment-right pt-60 pb-60">
+							<form class="form-wrap" Method="POST" >
+																<input id="datepicker1" name="date" class="dates form-control"  placeholder="Date de Naissance" type="text">   
+								{% block select %}{% endblock %}
+									
+								<input id="datepicker2" class="dates form-control" name="rv"  placeholder="Date rendez-vous" type="text">  
+								<input type="time" class="form-control" name="heure" placeholder="Entrez l'heure du rdv" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Entrez l'heure du rdv'" >
+
+								<div class="form-select" id="service-select">
+									<select name="motif">
+										<option="">Specialite</option>
+										<option value="renouveler un rendez vous">renouveler un rendez vous</option>
+										<option value="consultation">consultation</option>
+										<option value="prendre rv">prendre rv</option>
+										<option value="renouveler un rendez vous">renouveler un rendez vous</option>
+									</select>
+								</div>
+								<input type="submit" value="Confirmez Votre Rendez-Vous" name="ajouter" class="primary-btn text-uppercase">
+							</form>
+						</div>
+					</div>
+				</div>	
+			</section>
+			
+
+
+
+
+
+
+
+{% endblock %}
