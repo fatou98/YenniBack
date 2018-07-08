@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<style>
+body{
+    background-image:url('/img/r.jpg');
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position-y:-750px;
+}
+section{
+    margin-left:20%;
+    margin-right:20%;
+    color:white;
+}
+form{
+    background:rgba(128,128,128,0.685);
+    height:380px;
+    width:600px;
+    padding:25px;
+    padding-top:40px;
+}
+input{
+    border:none;
+    outline:none;
+    background:transparent;
+    border-bottom: solid 1px white;
+    color:white;
+}
+button{
+    border:none;
+    border-radius:10px;
+    font-size:20px;
+}
+label{
+    width:180px;
+}
+</style>
+
+<section class="container">
+<div id="form" class="row fullscreen d-flex align-items-center justify-content-center">
+{{form(form)}}
+</div>
+</section>
+
+{% endblock %}
