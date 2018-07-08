@@ -76,7 +76,7 @@ class SecurityController extends Controller {
     public function clientinscriptionAction(Request $request, UserPasswordEncoderInterface $passwordEncoder) {
         // 1) build the form
         $client = new Client();
-        $form = $this->createForm( ClientformType ::class, $client);
+        $form = $this->createForm(ClientformType::class, $client);
         // 2) handle the submit (will only happen on POST)
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
