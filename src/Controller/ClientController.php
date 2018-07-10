@@ -4,6 +4,9 @@ namespace App\Controller;
 
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
+use App\Entity\PriseDerendezvous;
+use App\Entity\Client;
 
 class ClientController extends Controller
 {
@@ -56,10 +59,31 @@ class ClientController extends Controller
     /**
      * @Route("/rv", name="rv")
      */
-    public function demanderv()
-    {
-        return $this->render('client/demanderv.html.twig', [
-            'controller_name' => 'ClientController',
-        ]);
+public function PrisedeRV(Request $request)
+{
+
+   
+$em = $this->getDoctrine()->getManager();
+$specialitet=$em->getRepository(Specialite::class)->findAll();;
+if($request->isMethod('POST')) {
+    if(isset($_POST['ajouter'])){
+        extract($_POST);
+    $idspec=$em->getRepository(Client::class)->findById(array('id'=>$client));
+        $priserendezvous = new  PriseDerendezvous();
+        $priserendezvous->setSpecialite($idspec[0]);
+        $priserendezvous->setDaterv(new \DateTime('now'));
+        $priserendezvous->setMotif($motif);
+        $priserendezvous->setHeure($heure);
+        $em->persist($priserendezvous);
+        $em->flush();
+       // $bien = $this->getDoctrine()->getManager()->getRepository('accueil/index.html')
+       // ->FindAll();
     }
+}
+          return $this->render('client/demanderv.html.twig',[
+          'specialites'=>$specialitet
+
+          ]);
+        }
+
 }

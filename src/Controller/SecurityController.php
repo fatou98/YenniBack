@@ -83,7 +83,7 @@ class SecurityController extends Controller {
             // 3) Encode the password (you could also do this via Doctrine listener)
            // 3) Encode the password (you could also do this via Doctrine listener)
            $password = $passwordEncoder->encodePassword($client, $client->getPlainPassword());
-           $user->setPassword($password);
+           $client->setPassword($password);
 
             //on active par défaut
             //$user->setIsActive(true);
