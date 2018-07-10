@@ -2,6 +2,45 @@
 
 
     {% block content %}
-<h1>Patient</h1>
 
+<div id="particles-js"></div>
+<div class="container">
+  <form action="action_page.php">
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">Nom Patient</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="fname" name="firstname" placeholder="patient name..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Nom medecin</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="lname" name="lastname" placeholder="medecin name..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="email">Email</label>
+      </div>
+      <div class="col-75">
+          <input type="email" id="lname" name="lastname" placeholder="email..">
+      </div>
+      <div class="col-75">
+          <input type="date" id="lname" name="date" placeholder="la date ..">
+      </div>
+      <div class="col-75">
+          <textarea rows="4" cols="50">
+</textarea
+      </div>
+    </div>
+    <div class="row">
+      <input type="submit" value="Submit">
+      </div>
+    </form>
+  </div>
+</div>
 {% endblock %}

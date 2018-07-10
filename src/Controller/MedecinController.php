@@ -28,6 +28,15 @@ class MedecinController extends Controller
             'controller_name' => 'MedecinController',
         ]);
     }
+       /**
+     * @Route("/heure", name="heure")
+     */
+    public function horairesmedecin()
+    {
+        return $this->render('medecin/horairesmedecin.html.twig', [
+            'controller_name' => 'MedecinController',
+        ]);
+    }
         /**
      * @Route("/ordonnance", name="ordonnance")
      */
