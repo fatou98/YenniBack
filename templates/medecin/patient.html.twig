@@ -2,45 +2,217 @@
 
 
     {% block content %}
+ <div class="row mt20">
+          <div class="col-md-6">
+            <div class="bs-component">
+              <div class="tab-block mb25">
+                <ul class="nav nav-tabs tabs-border nav-justified">
+                  <li class="active">
+                    <a href="#tab15_1" data-toggle="tab">Identite</a>
+                  </li>
 
-<div id="particles-js"></div>
-<div class="container">
-  <form action="action_page.php">
-    <div class="row">
-      <div class="col-25">
-        <label for="fname">Nom Patient</label>
-      </div>
-      <div class="col-75">
-        <input type="text" id="fname" name="firstname" placeholder="patient name..">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="lname">Nom medecin</label>
-      </div>
-      <div class="col-75">
-        <input type="text" id="lname" name="lastname" placeholder="medecin name..">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="email">Email</label>
-      </div>
-      <div class="col-75">
-          <input type="email" id="lname" name="lastname" placeholder="email..">
-      </div>
-      <div class="col-75">
-          <input type="date" id="lname" name="date" placeholder="la date ..">
-      </div>
-      <div class="col-75">
-          <textarea rows="4" cols="50">
-</textarea
-      </div>
-    </div>
-    <div class="row">
-      <input type="submit" value="Submit">
-      </div>
-    </form>
-  </div>
-</div>
+                  <li>
+                    <a href="#tab16_2" data-toggle="tab"><i class="fa fa-pencil text-purple pr5"></i>Coordonnees</a>
+                  </li>
+                  <li>
+                    <a href="#tab17_4" data-toggle="tab"><i class="fa fa-pencil text-purple pr5"></i>Fiche Medical</a>
+                  </li>
+                  <li>
+                    <a href="#tab18_5" data-toggle="tab"><i class="fa fa-pencil text-purple pr5"></i>Allergies</a>
+                  </li>
+                  <li>
+                    <a href="#tab19_6" data-toggle="tab"><i class="fa fa-pencil text-purple pr5"></i>Antecedents</a>
+                  </li>
+                    </ul>
+                  </li>
+                </ul>
+                <div class="tab-content">
+                  <div id="tab15_1" class="tab-pane active">
+                    <p><b>TAB ONE - </b><div class="panel">
+              <div class="panel-heading">
+                <span class="panel-title">Reference Patient</span>
+              </div>
+              <div class="panel-body">
+
+                <form class="form-horizontal" role="form">
+                  <div class="form-group">
+                   <label for="inputStandard" class="col-lg-3 control-label">Nom</label>
+                    <div class="col-lg-8">
+                      <div class="bs-component">
+                    <input type="text" id="inputStandard" class="form-control" placeholder="Type Here...">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputStandard" class="col-lg-3 control-label">Prenom</label>
+                    <div class="col-lg-8">
+                      <div class="bs-component">
+                        <input type="text" id="inputStandard" class="form-control" placeholder="Type Here...">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputStandard" class="col-lg-3 control-label">Adresse</label>
+                    <div class="col-lg-8">
+                      <div class="bs-component">
+                        <input type="text" id="inputStandard" class="form-control" placeholder="Type Here...">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputSelect" class="col-lg-3 control-label">Sexe</label>
+                    <div class="col-lg-8">
+                      <div class="bs-component">
+                        <select class="form-control">
+                          <option>Option 1</option>
+                          <option>Option 2</option>
+                          <option>Option 3</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+ </p>
+                  </div>
+                  
+                  <div id="tab16_2" class="tab-pane">
+                    <p><b>TAB TWO - </b> <div class="panel">
+              <div class="panel-heading">
+                <span class="panel-title">Coordonnees</span>
+              </div>
+              <div class="panel-body">
+
+                <form class="form-horizontal" role="form">
+                  <div class="form-group">
+                   <label for="inputStandard" class="col-lg-3 control-label">Adresse</label>
+                    <div class="col-lg-8">
+                      <div class="bs-component">
+                    <input type="text" id="inputStandard" class="form-control" placeholder="votre adresse">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputStandard" class="col-lg-3 control-label">Pays</label>
+                    <div class="col-lg-8">
+                      <div class="bs-component">
+                        <input type="text" id="inputStandard" class="form-control" placeholder="Votre pays">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputStandard" class="col-lg-3 control-label">Region</label>
+                    <div class="col-lg-8">
+                      <div class="bs-component">
+                        <input type="text" id="inputStandard" class="form-control" placeholder="votre Region">
+                      </div>
+                    </div>
+                  </div>
+                   <div class="form-group">
+                    <label for="inputStandard" class="col-lg-3 control-label">Ville</label>
+                    <div class="col-lg-8">
+                      <div class="bs-component">
+                        <input type="text" id="inputStandard" class="form-control" placeholder="ville actuelle">
+                      </div>
+                    </div>
+                  </div>
+                   <div class="form-group">
+                    <label for="inputStandard" class="col-lg-3 control-label">Quartier</label>
+                    <div class="col-lg-8">
+                      <div class="bs-component">
+                        <input type="text" id="inputStandard" class="form-control" placeholder="votre Quartier">
+                      </div>
+                    </div>
+                  </div>
+                   <div class="form-group">
+                    <label for="inputStandard" class="col-lg-3 control-label">Telephone</label>
+                    <div class="col-lg-8">
+                      <div class="bs-component">
+                        <input type="number" id="inputStandard" class="form-control" placeholder="tel">
+                      </div>
+                    </div>
+                  </div>
+                  
+                </form>
+              </div>
+            </div>
+</p>
+                  </div>
+                  <div id="tab17_4" class="tab-pane">
+                    <p><b>TAB TWO - </b> <div class="card">
+              <div class="card-heading">
+                <span class="card-title">Standard Fields</span>
+              </div>
+              <div class="card-body">
+             <div class="form-group">
+                    <label for="inputSelect" class="col-lg-4 control-label">Groupe sanguin</label>
+                    <div class="col-lg-8">
+                      <div class="bs-component">
+                        <select class="form-control">
+                          <option>Option 1</option>
+                          <option>Option 2</option>
+                          <option>Option 3</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputStandard" class="col-lg-3 control-label">Poids</label>
+                    <div class="col-lg-8">
+                      <div class="bs-component">
+                        <input type="text" id="inputStandard" class="form-control" placeholder="Type Here...">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputStandard" class="col-lg-3 control-label">Taille</label>
+                    <div class="col-lg-8">
+                      <div class="bs-component">
+                        <input type="text" id="inputStandard" class="form-control" placeholder="Type Here...">
+                      </div>
+                    </div>
+                  </div>
+              
+                </form>
+              </div>
+            </div></p>
+                  </div>
+                  <div id="tab18_5" class="tab-pane">
+                    <p><b>TAB TWO - </b> jaafar</p>
+                  </div>
+                  <div id="tab19_6" class="tab-pane">
+                    <p><b>TAB TWO - </b> <div class="panel">
+              <div class="panel-heading">
+                <span class="panel-title">Standard Fields</span>
+              </div>
+              <div class="panel-body">
+             <div class="form-group">
+                    <label class="col-lg-3 control-label" for="textArea2">Text Area</label>
+                    <div class="col-lg-8">
+                      <div class="bs-component">
+                        <textarea class="form-control" id="textArea2" rows="3"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-lg-3 control-label" for="textArea2">Text Area</label>
+                    <div class="col-lg-8">
+                      <div class="bs-component">
+                        <textarea class="form-control" id="textArea2" rows="3"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                 
+                  
+                </form>
+              </div>
+            </div>
+
+</p>
+                  
+                  
+                  
+                  
+                  
 {% endblock %}
