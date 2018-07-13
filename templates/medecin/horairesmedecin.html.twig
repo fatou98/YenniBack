@@ -3,16 +3,43 @@
 
     {% block content %}
 
-<div class="col-lg-6 col-md-6 appointment-right pt-60 pb-60">
-							<form class="form-wrap" Method="POST" >
-								<h3 class="pb-20 text-center mb-30">Disponiblite</h3>		
-                                <input type="text" id="inputStandard" class="form-control" placeholder="Type Here...">								<input type="email" class="form-control" name="email" placeholder="Adresse Mail" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address'" >  
-					            <input type="text" class="form-control" name="tel" placeholder="Telephone " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone'" >
-                                <input id="datepicker2" class="dates form-control" name="rv"  placeholder="Date Disponiblite" type="text">  
-								<input type="time" class="form-control" name="heure" placeholder="Entrez l'heure disponible" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Entrez l'heure du rdv'" >
-                                 <input type="submit" value="editer">
-								</div>
-								
-							</form>
+
+  <table class="table table-striped table-hover" id="datatable3" cellspacing="0" width="100%">
+                    <thead>
+
+<th>Prenom</th>
+<th>Nom</th>
+<th>Telephone</th>
+<th>Adresse</th>
+<th>specialite</th>
+<th>disponiblite</th>
+<th>date</th>
+<th>heures</th>
+
+
+
+</tr>
+</thead>
+
+<tfoot>
+
+
+<th>Prenom</th>
+<th>Nom</th>
+<th>Telephone</th>
+<th>Adresse</th>
+<th>specialite</th>
+<th>disponiblite</th>
+<th>date</th>
+<th>heures</th>
+
+
+
+</tfoot>
+
+
+</table>
+					
+
 						</div>
 {% endblock %}

@@ -49,26 +49,17 @@
 						</div>
 						<div class="col-lg-6 col-md-6 appointment-right pt-60 pb-60">
 							<form class="form-wrap" Method="POST" >
-								<h3 class="pb-20 text-center mb-30">Prendre Rendez-Vous</h3>		
-								<input type="text" class="form-control" name="nomcomplet" placeholder="Nom Complet" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Patient Name'" >
-								<input type="text" class="form-control" name="tel" placeholder="Telephone " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone'" >
-								<input type="email" class="form-control" name="email" placeholder="Adresse Mail" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address'" >
-								<input id="datepicker1" name="date" class="dates form-control"  placeholder="Date de Naissance" type="text">   
-								{% block select %}{% endblock %}
-									
-								<input id="datepicker2" class="dates form-control" name="rv"  placeholder="Date rendez-vous" type="text">  
-								<input type="time" class="form-control" name="heure" placeholder="Entrez l'heure du rdv" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Entrez l'heure du rdv'" >
+								<h3 class="pb-20 text-center mb-30">Hello Docteur</h3>		
+		Hello Doctor est une startup de conciergerie médicale offrant une large gamme de services:
+Prise de rendez-vous
+Livraison de médicament
+Devis médical
+VSL (Véhicule Sanitaire léger)
+HAD (Hopital A Domicile)
+Dans l’optique d’une amélioration des services dans le secteur de la santé au Sénégal et en Afrique, Hello Doctor met à votre disposition un réseaux de médecins, Cliniques, pharmacies et hôpitaux qui vous facilite vos démarches santé. 
 
-								<div class="form-select" id="service-select">
-									<select name="motif">
-										<option="">Specialite</option>
-										<option value="renouveler un rendez vous">renouveler un rendez vous</option>
-										<option value="consultation">consultation</option>
-										<option value="prendre rv">prendre rv</option>
-										<option value="renouveler un rendez vous">renouveler un rendez vous</option>
-									</select>
-								</div>
-								<input type="submit" value="Confirmez Votre Rendez-Vous" name="ajouter" class="primary-btn text-uppercase">
+								
+							<a href="/inscriptionclient" class="primary-btn text-uppercase">Profitez De nos services</a>
 							</form>
 						</div>
 					</div>
