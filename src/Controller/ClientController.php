@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\PriseDerendezvous;
 use App\Entity\Client;
+use App\Entity\Specialite;
 
 class ClientController extends Controller
 {

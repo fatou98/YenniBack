@@ -33,28 +33,26 @@ class MedecinController extends Controller
      */
     public function horairesmedecin()
     {
-        return $this->render('medecin/horairesmedecin.html.twig', [
+        return $this->render('medecin/ajouterheuredispo.html.twig', [
             'controller_name' => 'MedecinController',
         ]);
     }
-        /**
-     * @Route("/ordonnance", name="ordonnance")
-     */
-    public function ordonnance(AuthenticationUtils $authenticationUtils)
-    {
-        //$user = $authenticationUtils->getNomcomplet();
-
-        return $this->render('medecin/ordonance.html.twig', [
-            'controller_name' => 'MedecinController'
-         //   'users'=>$user
-        ]);
-    }
+     
        /**
      * @Route("/liste", name="liste")
      */
     public function listepatient()
     {
         return $this->render('medecin/listepatient.html.twig', [
+            'controller_name' => 'MedecinController',
+        ]);
+    }
+        /**
+     * @Route("/listerv", name="liste")
+     */
+    public function listerv()
+    {
+        return $this->render('medecin/listervmedcin.html.twig', [
             'controller_name' => 'MedecinController',
         ]);
     }
