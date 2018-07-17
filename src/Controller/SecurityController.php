@@ -45,33 +45,7 @@ class SecurityController extends Controller {
         }
         return $this->render('security/inscription.html.twig', ['form' => $form->createView(), 'mainNavRegistration' => true, 'title' => 'Inscription']);
     }
-     /**
-     * @Route("/connexion", name="connexion")
-     */
-    public function login(Request $request, AuthenticationUtils $authenticationUtils) {
-        // get the login error if there is one
-        $error = $authenticationUtils->getLastAuthenticationError();
-        // last username entered by the user
-        $lastUsername = $authenticationUtils->getLastUsername();
-        //
-        $form = $this->get('form.factory')
-                ->createNamedBuilder(null)
-                ->add('_username', null, ['label' => 'Email'])
-                ->add('_password', \Symfony\Component\Form\Extension\Core\Type\PasswordType::class, ['label' => 'Mot de passe'])
-                ->add('connexion', \Symfony\Component\Form\Extension\Core\Type\SubmitType::class, ['label' => 'Connexion', 'attr' => ['class' => 'green darken-4']])
-                ->getForm();
-//return $this->redirectToRoute('membre');
-
-        return $this->render('security/connexion.html.twig', [
-                    'mainNavLogin' => true, 'title' => 'Connexion',
-                    //
-                    'form' => $form->createView(),
-                    'last_username' => $lastUsername,
-                    'error' => $error,
-        ]);
-    }
-
-
+     
  /**
      * @Route("/inscriptionclient",name="inscription")
      */
@@ -89,7 +63,7 @@ class SecurityController extends Controller {
 
             //on active par défaut
             //$user->setIsActive(true);
-            //$user->addRole("ROLE_ADMIN");
+            $user->addRole("ROLE_USER");
             // 4) save the User!
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($client);
@@ -102,7 +76,7 @@ class SecurityController extends Controller {
         return $this->render('security/inscriptionclient.html.twig', ['form' => $form->createView(), 'mainNavRegistration' => true, 'title' => 'Inscription']);
     }
      /**
-     * @Route("/connexionclient", name="connexion")
+     * @Route("/connexionclient", name="connexionclient")
      */
     public function Client(Request $request, AuthenticationUtils $authenticationUtils) {
         // get the login error if there is one

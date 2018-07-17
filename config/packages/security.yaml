@@ -8,7 +8,7 @@ security:
     providers:
         our_db_provider:
             entity:
-                class: App\Entity\User
+                class: App\Entity\CLient
                 property: email
         
     firewalls:
@@ -18,11 +18,11 @@ security:
             provider: our_db_provider
             anonymous: ~
             form_login:
-                login_path: connexion
-                check_path: connexion
+                login_path: connexionclient
+                check_path: connexionclient
             logout:
                 path:  /logout
-                target: /connexion
+                target: /connexionclient
             
     role_hierarchy:
         ROLE_ADMIN:      ROLE_USER
@@ -31,5 +31,5 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        - { path: ^/medecin, roles: ROLE_ADMIN }
-        - { path: ^/member, roles: ROLE_USER }
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/client, roles: ROLE_USER }
