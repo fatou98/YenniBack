@@ -70,4 +70,12 @@ public function PrisedeRV(Request $request)
 
                       ]);
                     }
-                }
+     /**
+     * @Route("/annuaire", name="annuaire")
+     */
+    public function annuaire()
+    {
+        return $this->render('accueil/annuaire.html.twig', [
+            'controller_name' => 'AccueilController',
+        ]);
+        }}
