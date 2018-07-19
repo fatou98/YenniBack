@@ -3,9 +3,6 @@
                       <h1>Prendre Rendez-Vous</h1>
 						<div class="col-lg-6 col-md-6 appointment-right pt-60 pb-60">
 							<form class="form-wrap" Method="POST" >
-							<input id="datepicker1" name="date" class="dates form-control"  placeholder="Date de Naissance" type="text">   
-						
-									
 								<input id="datepicker2" class="dates form-control" name="rv"  placeholder="Date rendez-vous" type="text">  
 								<input type="time" class="form-control" name="heure" placeholder="Entrez l'heure du rdv" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Entrez l'heure du rdv'" >
 
@@ -16,6 +13,15 @@
 										<option value="consultation">consultation</option>
 										<option value="prendre rv">prendre rv</option>
 										<option value="renouveler un rendez vous">renouveler un rendez vous</option>
+									</select>
+								</div>
+								<div class="form-select" id="service-select">
+									<select name="structure">
+										<option="">Stucture</option>
+										<option value="renouveler un rendez vous">clinique madeleine</option>
+										<option value="consultation">sos dentiste</option>
+										<option value="prendre rv"></option>
+										<option value="">clinique bambilor</option>
 									</select>
 								</div>
 								<input type="submit" value="Confirmez Votre Rendez-Vous" name="ajouter" class="primary-btn text-uppercase">

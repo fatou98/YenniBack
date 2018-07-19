@@ -90,26 +90,27 @@ class MedecinController extends Controller
         
         return $this->redirectToRoute('listepatient');
     }
-    /**
-     * @Route("/addpatient", name="add_patient", methods="GET|POST")
-     */
-    public function add(Request $request){
+//     /**
+//      * @Route("/addpatient", name="add_patient", methods="GET|POST")
+//      */
+//     public function add(Request $request){
 
-        $client = new Client();
-        $form = $this->createForm(ClientformType::class, $client);
-        $form->handleRequest($request);
+//         $client = new Client();
+//         $form = $this->createForm(ClientformType::class, $client);
+//         $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid()){
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($client);
-            $em->flush();
+//         if($form->isSubmitted() && $form->isValid()){
+//             $em = $this->getDoctrine()->getManager();
+//             $em->persist($client);
+//             $em->flush();
 
-            return $this->redictToRoute('listepatient');
-        }
+//             return $this->redictToRoute('listepatient');
+//         }
 
-        return $this->render('medecin/addpatient.html.twig', [
-            'client'=>$client,
-            'form'=> $form->createView()
-        ]);
-    }
+//         return $this->render('medecin/addpatient.html.twig', [
+//             'client'=>$client,
+//             'form'=> $form->createView()
+//         ]);
+//     }
+// }
 }

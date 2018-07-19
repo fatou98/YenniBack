@@ -58,6 +58,7 @@ class PriseDerendezvous
      * @ORM\JoinColumn(nullable=false)
      */
     private $specialite;
+    
 
     public function getId()
     {
