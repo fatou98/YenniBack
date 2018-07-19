@@ -5,7 +5,15 @@
 							<form class="form-wrap" Method="POST" >
 								<input id="datepicker2" class="dates form-control" name="rv"  placeholder="Date rendez-vous" type="text">  
 								<input type="time" class="form-control" name="heure" placeholder="Entrez l'heure du rdv" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Entrez l'heure du rdv'" >
+                                <div class="form-select" id="service-select">
+									<select name="specialite">
+										<option data-display="">Specialite</option>
+									{% for specialite in specialites %}
+												<option value="{{specialite.id}}">{{specialite.nomspecialite}}</option>
 
+									{% endfor %}
+										
+									</select>
 								<div class="form-select" id="service-select">
 									<select name="motif">
 										<option="">Specialite</option>
@@ -16,14 +24,14 @@
 									</select>
 								</div>
 								<div class="form-select" id="service-select">
-									<select name="structure">
-										<option="">Stucture</option>
-										<option value="renouveler un rendez vous">clinique madeleine</option>
-										<option value="consultation">sos dentiste</option>
-										<option value="prendre rv"></option>
-										<option value="">clinique bambilor</option>
+									<select name="specialite">
+										<option data-display="">Structure</option>
+									{% for structure in structures %}
+												<option value="{{structure.id}}">{{structure.nomstructure}}</option>
+
+									{% endfor %}
+										
 									</select>
-								</div>
 								<input type="submit" value="Confirmez Votre Rendez-Vous" name="ajouter" class="primary-btn text-uppercase">
 							</form>
 						</div>
