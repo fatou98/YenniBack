@@ -33,30 +33,86 @@ class ClientController extends Controller
          /**
          * @Route("/had", name="had")
          */
-        public function hospitalisation()
+        public function hospitalisation(Request $request)
         {
-            return $this->render('client/had.html.twig', [
-                'controller_name' => 'ClientController',
-            ]);
-        }
+            $em = $this->getDoctrine()->getManager();
+            
+                    if($request->isMethod('POST')) {
+                    if(isset($_POST['Envoyez'])){
+                        extract($_POST);
+                    $client=$em->getRepository(Client::class)->findById(array('id'=>$client));
+    
+                        $had = new  Had();
+                        $had->setAdresse($adresse);
+                        $had->setTel($tel);
+                        $had->setMotif($motif);
+                        $had->setClient($client[0]);
+                        $em->persist($priserendezvous);
+                        $em->flush();
+                       
+                    }
+                }
+                          return $this->render('client/had.html.twig',[
+                          
+    
+                          ]);
+                        }
          /**
          * @Route("/vsl", name="vsl")
          */
-        public function vehiculesanitaire()
+        public function vehiculesanitaire(Request $request)
         {
-            return $this->render('client/vsl.html.twig', [
-                'controller_name' => 'ClientController',
-            ]);
-        }
+            $em = $this->getDoctrine()->getManager();
+                    if($request->isMethod('POST')) {
+                    if(isset($_POST['Envoyez'])){
+                        extract($_POST);
+                    $client=$em->getRepository(Client::class)->findById(array('id'=>$client));
+    
+                        $vsl = new  Vsl();
+                        $vsl->setNomComplet($nomcomplet);
+                        $vsl->setAdresse($adresse);
+                        $vsl->setTel($tel);
+                        $vsl->setFichemaladie($fichemaladie);
+                        $vsl->setClient($client[0]);
+                        $em->persist($priserendezvous);
+                        $em->flush();
+                       
+                    }
+                }
+                          return $this->render('client/vsl.html.twig',[
+                          
+    
+                          ]);
+                        }
          /**
          * @Route("/livraison", name="livraison")
          */
-        public function livraisonmedoc()
+        public function livraisonmedoc(Request $request)
         {
-            return $this->render('client/livraison.html.twig', [
-                'controller_name' => 'ClientController',
-            ]);
-        }
+            $em = $this->getDoctrine()->getManager();
+            $client=$em->getRepository(Client::class)->findAll();;
+                    if($request->isMethod('POST')) {
+                    if(isset($_POST['Envoyez'])){
+                        extract($_POST);
+                    $client=$em->getRepository(Client::class)->findById(array('id'=>$client));
+    
+                        $livraison = new  Livraison();
+                        $livraison->setNomComplet($nom);
+                        $livraison->setAdresse($adresse);
+                        $livraison->setTel($tel);
+                        $livraison->setOrdonnance($ordonnance);
+                        $livraison->setClient($client[0]);
+                        $em->persist($priserendezvous);
+                        $em->flush();
+                       // $bien = $this->getDoctrine()->getManager()->getRepository('accueil/index.html')
+                       // ->FindAll();
+                    }
+                }
+                          return $this->render('client/livraison.html.twig',[
+                          'clients'=>$client
+    
+                          ]);
+                        }
     /**
      * @Route("/rv", name="rv")
      */
