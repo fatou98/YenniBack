@@ -66,9 +66,9 @@ class Client implements AdvancedUserInterface, \Serializable {
     private $isActive;
 
     /**
-     * @ORM\Column(name="roles", type="array")
+     * @ORM\Column(name="roles", type="string")
      */
-    private $roles = array();
+    private $roles;
 
     public function __construct() {
         $this->isActive = true;
@@ -102,7 +102,7 @@ class Client implements AdvancedUserInterface, \Serializable {
     }
 
     function addRole($role) {
-        $this->roles[] = $role;
+        $this->roles= $role;
     }
 
     public function eraseCredentials() {

@@ -8,6 +8,13 @@ use Symfony\Component\HttpFoundation\Request;
 use App\Entity\PriseDerendezvous;
 use App\Entity\Client;
 use App\Entity\Specialite;
+use App\Entity\Had;
+use App\Entity\Vsl;
+use App\Entity\Livraison;
+use App\Entity\Structure;
+
+use App\Repository\ClientRepository;
+use App\Repository\StructureRepository;
 
 class ClientController extends Controller
 {
@@ -47,7 +54,7 @@ class ClientController extends Controller
                         $had->setTel($tel);
                         $had->setMotif($motif);
                         $had->setClient($client[0]);
-                        $em->persist($priserendezvous);
+                        $em->persist($had);
                         $em->flush();
                        
                     }
@@ -60,49 +67,50 @@ class ClientController extends Controller
          /**
          * @Route("/vsl", name="vsl")
          */
-        public function vehiculesanitaire(Request $request)
+        public function vehiculesanitaire(Request $request,ClientRepository $clientrepo)
         {
             $em = $this->getDoctrine()->getManager();
+            $client=$clientrepo->findAll();
                     if($request->isMethod('POST')) {
-                    if(isset($_POST['Envoyez'])){
+                    if(isset($_POST['ajouter'])){
                         extract($_POST);
                     $client=$em->getRepository(Client::class)->findById(array('id'=>$client));
     
                         $vsl = new  Vsl();
                         $vsl->setNomComplet($nomcomplet);
                         $vsl->setAdresse($adresse);
-                        $vsl->setTel($tel);
+                        $vsl->setTel($telephone);
                         $vsl->setFichemaladie($fichemaladie);
                         $vsl->setClient($client[0]);
-                        $em->persist($priserendezvous);
+                        $em->persist($vsl);
                         $em->flush();
                        
                     }
                 }
                           return $this->render('client/vsl.html.twig',[
-                          
-    
+                            'clients'=>$client
+                                
                           ]);
                         }
          /**
          * @Route("/livraison", name="livraison")
          */
-        public function livraisonmedoc(Request $request)
+        public function livraisonmedoc(Request $request,ClientRepository $clientrepo)
         {
             $em = $this->getDoctrine()->getManager();
-            $client=$em->getRepository(Client::class)->findAll();;
-                    if($request->isMethod('POST')) {
+            $client=$clientrepo->findAll();
+            if($request->isMethod('POST')) {
                     if(isset($_POST['Envoyez'])){
                         extract($_POST);
                     $client=$em->getRepository(Client::class)->findById(array('id'=>$client));
     
                         $livraison = new  Livraison();
-                        $livraison->setNomComplet($nom);
+                        $livraison->setNomComplet($nomcomplet);
                         $livraison->setAdresse($adresse);
                         $livraison->setTel($tel);
                         $livraison->setOrdonnance($ordonnance);
                         $livraison->setClient($client[0]);
-                        $em->persist($priserendezvous);
+                        $em->persist($livraison);
                         $em->flush();
                        // $bien = $this->getDoctrine()->getManager()->getRepository('accueil/index.html')
                        // ->FindAll();
@@ -116,27 +124,23 @@ class ClientController extends Controller
     /**
      * @Route("/rv", name="rv")
      */
-    public function PrisedeRV(Request $request)
+    public function PrisedeRV(Request $request,ClientRepository $clientrepo,StructureRepository $structurerepo)
     {
 
        
 $em = $this->getDoctrine()->getManager();
-$specialitet=$em->getRepository(Specialite::class)->findAll();;
-$em = $this->getDoctrine()->getManager();
-$client=$em->getRepository(Client::class)->findAll();;
-$em = $this->getDoctrine()->getManager();
-$structure=$em->getRepository(Structure::class)->findAll();;
+$nosspeci=$em->getRepository(Specialite::class)->findAll();
+$client=$clientrepo->findAll();
+$structures=$structurerepo->findAll();
 
 
     if($request->isMethod('POST')) {
         if(isset($_POST['ajouter'])){
             extract($_POST);
         $idspec=$em->getRepository(Specialite::class)->findById(array('id'=>$specialite));
-        $idclient=$em->getRepository(Client::class)->findById(array('id'=>$sclient));
-        $idstruct=$em->getRepository(Structure::class)->findById(array('id'=>$structure));
-
+        $idclient=$em->getRepository(Client::class)->findById(array('id'=>3));
+        $idstruct=$em->getRepository(Structure::class)->findById(array('id'=>$struc));
             $priserendezvous = new  PriseDerendezvous();
-           
             $priserendezvous->setSpecialite($idspec[0]);
             $priserendezvous->setDaterv(new \DateTime('now'));
             $priserendezvous->setMotif($motif);
@@ -145,13 +149,12 @@ $structure=$em->getRepository(Structure::class)->findAll();;
             $priserendezvous->setClient($idclient[0]);
             $em->persist($priserendezvous);
             $em->flush();
-          
         }
     }
               return $this->render('client/demanderv.html.twig',[
-              'specialites'=>$specialitet,
+              'specialites'=>$nosspeci,
               'clients'=>$client,
-              'structures'=>$structure,
+              'structures'=>$structures,
               ]);
             }
         }
