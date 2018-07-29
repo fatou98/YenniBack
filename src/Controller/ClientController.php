@@ -40,18 +40,16 @@ class ClientController extends Controller
          */
         public function vehiculesanitaire()
         {
-            return $this->render('client/vsl.html.twig', [
-                'controller_name' => 'ClientController',
-            ]);
+            return $this->render('client/vsl.html.twig'
+            );
         }
          /**
          * @Route("/livraison", name="livraison")
          */
         public function livraisonmedoc()
         {
-            return $this->render('client/livraison.html.twig', [
-                'controller_name' => 'ClientController',
-            ]);
+            return $this->render('client/livraison.html.twig'
+            );
         }
     /**
      * @Route("/rv", name="rv")

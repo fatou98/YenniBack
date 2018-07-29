@@ -16,20 +16,19 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('email')
-            ->add('nomcomplet')
-            ->add('Numpiece')
-            ->add('adresse')
-            ->add('Tel')
-            ->add('plainPassword', RepeatedType::class, array(
-                'type' => PasswordType::class,
-                'first_options' => array('label' => 'Mot de passe'),
-                'second_options' => array('label' => 'Confirmation du mot de passe'),
-                ))
-            ->add('submit', SubmitType::class, ['label'=>'Envoyer', 'attr'=>['class'=>'btn-primary btn-block']])            
+        ->add('email',EmailType::class, ['label' => 'Email','attr'=>['class'=>'col-md-6 gui-input','placeholder'=>'Entrer votre email']])
+        ->add('nomcomplet',TextType::class, ['label' => 'Nom complet','attr'=>['class'=>'col-md-6 gui-input','placeholder'=>'Entrer votre nomcomplet']])
+        ->add('login',TextType::class, ['label' => 'Login','attr'=>['class'=>'col-md-6 gui-input','placeholder'=>'Entrer votre login']])
+        ->add('Numpiece',NumberType::class, ['label' => 'Numpiéce','attr'=>['class'=>'col-md-6 gui-input','placeholder'=>'Entrer votre CNI']])
+        ->add('adresse',TextType::class, ['label' => 'Adresse','attr'=>['class'=>'gui-input','placeholder'=>'Entrer votre adresse complete']])
+        ->add('Tel',NumberType::class, ['label' => 'Téléphone','attr'=>['class'=>'gui-input','placeholder'=>'Entrer votre numero de téléphone']])
+        ->add('plainPassword', RepeatedType::class, array(
+            'type' => PasswordType::class,
+            'first_options' => array('label' => 'Mot de passe','attr'=>['class'=>'gui-input','placeholder'=>'Entrer votre password']),
+            'second_options' => array('label' => 'Confirmation du mot de passe','attr'=>['class'=>'gui-input','placeholder'=>'Confirmez votre mot de passe']),
+        ))
 
-        ;
-    }
+        ->add('submit', SubmitType::class, ['label'=>'Envoyer', 'attr'=>['class'=>'button btn-primary mr10 pull-right']]);        }
 
     public function configureOptions(OptionsResolver $resolver)
     {
