@@ -1,0 +1,49 @@
+{% extends 'layoutclient.html.twig' %}
+{% block body %}
+                      <h1>Prendre Rendez-Vous</h1>
+						<div class="col-lg-6 col-md-6 appointment-right pt-60 pb-60">
+							<form class="form-wrap" Method="POST" >
+								<input id="datepicker2" class="dates form-control" name="rv"  placeholder="Date rendez-vous" type="date">  
+								<input type="time" class="form-control" name="heure" placeholder="Entrez l'heure du rdv" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Entrez l'heure du rdv'" >
+                                <div class="form-select" id="service-select">
+									<select name="specialite">
+										<option data-display="">Specialite</option>
+									{% for specialite in specialites %}
+												<option value="{{specialite.id}}">{{specialite.nomspecialite}}</option>
+
+									{% endfor %}
+										
+									</select>
+								<div class="form-select" id="service-select">
+									<select name="motif">
+										<option="">Specialite</option>
+										<option value="renouveler un rendez vous">renouveler un rendez vous</option>
+										<option value="consultation">consultation</option>
+										<option value="prendre rv">prendre rv</option>
+										<option value="renouveler un rendez vous">renouveler un rendez vous</option>
+									</select>
+								</div>
+								<div class="form-select" id="service-select">
+									<select name="struc">
+										<option data-display="">Structure</option>
+									{% for structure in structures %}
+												<option value="{{structure.id}}">{{structure.nomstructure}}</option>
+
+									{% endfor %}
+										
+									</select>
+								<input type="submit" value="Confirmez Votre Rendez-Vous" name="ajouter" class="primary-btn text-uppercase">
+							</form>
+						</div>
+					</div>
+				</div>	
+			</section>
+			
+
+
+
+
+
+
+
+{% endblock %}

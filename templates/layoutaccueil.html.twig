@@ -49,26 +49,17 @@
 						</div>
 						<div class="col-lg-6 col-md-6 appointment-right pt-60 pb-60">
 							<form class="form-wrap" Method="POST" >
-								<h3 class="pb-20 text-center mb-30">Prendre Rendez-Vous</h3>		
-								<input type="text" class="form-control" name="nomcomplet" placeholder="Nom Complet" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Patient Name'" >
-								<input type="text" class="form-control" name="tel" placeholder="Telephone " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone'" >
-								<input type="email" class="form-control" name="email" placeholder="Adresse Mail" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address'" >
-								<input id="datepicker1" name="date" class="dates form-control"  placeholder="Date de Naissance" type="text">   
-								{% block select %}{% endblock %}
-									
-								<input id="datepicker2" class="dates form-control" name="rv"  placeholder="Date rendez-vous" type="text">  
-								<input type="time" class="form-control" name="heure" placeholder="Entrez l'heure du rdv" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Entrez l'heure du rdv'" >
+								<h3 class="pb-20 text-center mb-30">Hello Docteur</h3>		
+		Hello Doctor est Une Startup De Conciergerie Médicale Offrant Une Large Gamme De Services:
+Prise de rendez-vous
+Livraison de médicament
+Devis médical
+VSL (Véhicule Sanitaire léger)
+HAD (Hopital A Domicile)
+Dans l’optique D’une Amélioration Des Services Dans Le Secteur De La Santé Au Sénégal et en Afrique, Hello Doctor met à Votre Disposition un Réseaux de Médecins, Cliniques, Pharmacies et Hôpitaux Qui Vous Facilite vos Démarches santé. 
 
-								<div class="form-select" id="service-select">
-									<select name="motif">
-										<option="">Specialite</option>
-										<option value="renouveler un rendez vous">renouveler un rendez vous</option>
-										<option value="consultation">consultation</option>
-										<option value="prendre rv">prendre rv</option>
-										<option value="renouveler un rendez vous">renouveler un rendez vous</option>
-									</select>
-								</div>
-								<input type="submit" value="Confirmez Votre Rendez-Vous" name="ajouter" class="primary-btn text-uppercase">
+								
+							<a href="/client" class="primary-btn text-uppercase text-center">Profitez De nos services</a>
 							</form>
 						</div>
 					</div>
@@ -91,7 +82,7 @@
 						<div class="col-lg-3 col-md-6">
 							<div class="single-facilities">
 								<span class="lnr lnr-calendar-full"></span>
-								<a href="/accueil"><h4>Prise de rendez-vous en ligne</h4></a>
+								<a href="/rv"><h4>Prise de rendez-vous en ligne</h4></a>
 								<p>
 									le patient a la possiblite de prendre rendez-vous dans nos diferentes structures et le plus pres de sa position
 								</p>
@@ -100,7 +91,7 @@
 						<div class="col-lg-3 col-md-6">
 							<div class="single-facilities">
 								<span class="lnr lnr-heart-pulse"></span>
-								<a href="#"><h4>H A D</h4></a>
+								<a href="/had"><h4>H A D</h4></a>
 								<p>
 								Nous faisons aussi de l'hospitalisation a domicile en cas d'urgences ou permettre aux patient qui desire se soigner a domicile d'en profiter. 
 								</p>
@@ -109,7 +100,7 @@
 						<div class="col-lg-3 col-md-6">
 							<div class="single-facilities">
 								<span class="lnr lnr-bug"></span>
-								<a href="#"><h4>Livraison De Medicamment</h4></a>
+								<a href="/livraison"><h4>Livraison De Medicamment</h4></a>
 								<p>
 									Dans nos services Nous faisons de la livraison de mediccament aux patients qui le desire jusqu'a votre domicile
 								</p>
@@ -118,7 +109,7 @@
 						<div class="col-lg-3 col-md-6">
 							<div class="single-facilities">
 								<span class="lnr lnr-users"></span>
-								<a href="#"><h4>V S L</h4></a>
+								<a href="/vsl"><h4>V S L</h4></a>
 								<p>
 									location de vehicule sanitaire leger
 								</p>
@@ -177,9 +168,11 @@
 									<li><a href="#">Dentiste</a></li>
 									<li><a href="#">Generaliste</a></li>
 									<li><a href="#">Ophthalmology</a></li>
-									<li><a href="#">Cardiolofie</a></li>
+									<li><a href="#">Cardiologie</a></li>
 									<li><a href="#">Dermatologie</a></li>
 									<li><a href="#">Gynecologie</a></li>
+									<li><a href="#">Dermatologie</a></li>
+
 								</ul>
 								<a class="viewall-btn" href="#">Voir tous</a>			
 							</div>	
@@ -357,10 +350,10 @@
 				<div class="container">
 					<div class="row justify-content-center">
 						<div class="col-md-7 pb-60 header-text">
-							<h1>Our Recent Blogs</h1>
+							<h1>Hello Docteur Blog</h1>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua.
-							</p>
+					Ici nous ferons des blogs sur la sante des liens et des informations fiables pour votre sante
+					Nous essayerons avec des recherches certifie et l'aide de nos professionels de sante.		</p>
 						</div>
 					</div>
 					<div class="row">	

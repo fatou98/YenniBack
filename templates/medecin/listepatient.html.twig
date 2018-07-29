@@ -1,0 +1,32 @@
+{% extends 'layoutadmin.html.twig' %}
+
+
+    {% block content %}
+    <div>
+    <a href="{{ path('add_patient') }}" class="btn btn-rounded btn-success btn-block">Ajouter un Patient</a>
+  
+  <table class="table table-striped table-hover" id="datatable3" cellspacing="0" width="100%">
+                    <thead>
+
+<th>Prenom</th>
+<th>Telephone</th>
+<th>Adresse</th>
+<th>Modifier</th>
+<th>Suprimer</th>
+
+</tr>
+</thead>
+{% for client in clients %}
+<tbody>
+<th>{{ client.nomcomplet }}</th>
+<th>{{ client.tel }}</th>
+<th>{{ client.adresse }}</th>
+<th><a href="{{ path('edit_patient', {'id' : client.id }) }}" class="btn btn-rounded btn-primary btn-block">Editer</a></th>
+<th><a href="{{ path('delete_patient', {'id' : client.id }) }}" class="btn btn-rounded btn-danger btn-block">Suprimer</a></th>
+</tbody>
+{% endfor %}
+
+
+</table>
+  </div>
+{% endblock %}

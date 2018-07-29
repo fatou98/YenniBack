@@ -10,6 +10,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Security\Core\Encoder\ClientPasswordEncoderInterface;
+
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends Controller {
@@ -44,19 +46,42 @@ class SecurityController extends Controller {
             $this->addFlash('success', 'Votre compte à bien été enregistré.');
             //return $this->redirectToRoute('login');
         }
+<<<<<<< HEAD
         }
         else if ($etat==2){
      
+=======
+        return $this->render('security/inscription.html.twig', ['form' => $form->createView(), 'mainNavRegistration' => true, 'title' => 'Inscription']);
+    }
+     
+ /**
+     * @Route("/inscriptionclient",name="inscription")
+     */
+    public function clientinscriptionAction(Request $request, UserPasswordEncoderInterface $passwordEncoder) {
+        // 1) build the form
+        $client = new Client();
+        $form = $this->createForm(ClientformType::class, $client);
+>>>>>>> 678aecd25949d3c59b24618763165032199e60af
         // 2) handle the submit (will only happen on POST)
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             // 3) Encode the password (you could also do this via Doctrine listener)
+<<<<<<< HEAD
             $password = $passwordEncoder->encodePassword($user, $user->getPlainPassword());
             $user->setPassword($password);
             //on active par défaut
             $user->setIsActive(true);
            
             $user->addRole("ROLE_PATIENT");
+=======
+           // 3) Encode the password (you could also do this via Doctrine listener)
+           $password = $passwordEncoder->encodePassword($client, $client->getPlainPassword());
+           $client->setPassword($password);
+
+            //on active par défaut
+            //$user->setIsActive(true);
+            $user->addRole("ROLE_USER");
+>>>>>>> 678aecd25949d3c59b24618763165032199e60af
             // 4) save the User!
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
@@ -98,7 +123,11 @@ class SecurityController extends Controller {
 
 }
      /**
+<<<<<<< HEAD
      * @Route("/connexion", name="connexion")
+=======
+     * @Route("/connexionclient", name="connexionclient")
+>>>>>>> 678aecd25949d3c59b24618763165032199e60af
      */
     public function login(Request $request, AuthenticationUtils $authenticationUtils) {
         // get the login error if there is one

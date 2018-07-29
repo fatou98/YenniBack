@@ -15,32 +15,12 @@ class PriseDerendezvous
      * @ORM\Column(type="integer")
      */
     private $id;
-
-    /**
-     * @ORM\Column(type="string", length=50)
-     */
-    private $nomComplet;
+   
  /**
      * @ORM\Column(type="string", length=10)
      */
     private $heure;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $telephone;
-
-    /**
-     * @ORM\Column(type="string", length=50)
-     */
-    private $adresseMail;
-
-    /**
-     * @ORM\Column(type="date")
-     */
-    private $datenaiss;
-
-   
     /**
      * @ORM\Column(type="date")
      */
@@ -50,68 +30,29 @@ class PriseDerendezvous
      * @ORM\Column(type="string", length=255)
      */
     private $motif;
-     /**
-     * @ORM\Column(type="string", length=50)
-     */
+     
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Specialite")
      * @ORM\JoinColumn(nullable=false)
      */
     private $specialite;
+    
+ /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\structure")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $structure;
+     /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\client")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $client;
 
+    
     public function getId()
     {
         return $this->id;
-    }
-
-    public function getNomComplet(): ?string
-    {
-        return $this->nomComplet;
-    }
-
-    public function setNomComplet(string $nomComplet): self
-    {
-        $this->nomComplet = $nomComplet;
-
-        return $this;
-    }
-
-    public function getTelephone(): ?int
-    {
-        return $this->telephone;
-    }
-
-    public function setTelephone(int $telephone): self
-    {
-        $this->telephone = $telephone;
-
-        return $this;
-    }
-
-    public function getAdresseMail(): ?string
-    {
-        return $this->adresseMail;
-    }
-
-    public function setAdresseMail(string $adresseMail): self
-    {
-        $this->adresseMail = $adresseMail;
-
-        return $this;
-    }
-
-    public function getDatenaiss(): ?\DateTimeInterface
-    {
-        return $this->datenaiss;
-    }
-
-    public function setDatenaiss(\DateTimeInterface $datenaiss): self
-    {
-        $this->datenaiss = $datenaiss;
-
-        return $this;
-    }
-
+    }  
     public function getSpecialite(): ?string
     {
         return $this->specialite;
@@ -166,6 +107,46 @@ class PriseDerendezvous
     public function setHeure($heure)
     {
         $this->heure = $heure;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of structure
+     */ 
+    public function getStructure()
+    {
+        return $this->structure;
+    }
+
+    /**
+     * Set the value of structure
+     *
+     * @return  self
+     */ 
+    public function setStructure($structure)
+    {
+        $this->structure = $structure;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of client
+     */ 
+    public function getClient()
+    {
+        return $this->client;
+    }
+
+    /**
+     * Set the value of client
+     *
+     * @return  self
+     */ 
+    public function setClient($client)
+    {
+        $this->client = $client;
 
         return $this;
     }
