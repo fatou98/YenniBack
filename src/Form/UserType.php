@@ -1,13 +1,13 @@
 <?php
 
 namespace App\Form;
-
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -18,7 +18,6 @@ class UserType extends AbstractType
         $builder
         ->add('email',EmailType::class, ['label' => 'Email','attr'=>['class'=>'col-md-6 gui-input','placeholder'=>'Entrer votre email']])
         ->add('nomcomplet',TextType::class, ['label' => 'Nom complet','attr'=>['class'=>'col-md-6 gui-input','placeholder'=>'Entrer votre nomcomplet']])
-        ->add('login',TextType::class, ['label' => 'Login','attr'=>['class'=>'col-md-6 gui-input','placeholder'=>'Entrer votre login']])
         ->add('Numpiece',NumberType::class, ['label' => 'Numpiéce','attr'=>['class'=>'col-md-6 gui-input','placeholder'=>'Entrer votre CNI']])
         ->add('adresse',TextType::class, ['label' => 'Adresse','attr'=>['class'=>'gui-input','placeholder'=>'Entrer votre adresse complete']])
         ->add('Tel',NumberType::class, ['label' => 'Téléphone','attr'=>['class'=>'gui-input','placeholder'=>'Entrer votre numero de téléphone']])

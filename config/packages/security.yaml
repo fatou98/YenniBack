@@ -1,14 +1,14 @@
 security:
    # encoder
     encoders:
-        App\Entity\Client:
+        App\Entity\User:
             algorithm: bcrypt
     
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
         our_db_provider:
             entity:
-                class: App\Entity\CLient
+                class: App\Entity\User
                 property: email
         
     firewalls:
@@ -18,11 +18,11 @@ security:
             provider: our_db_provider
             anonymous: ~
             form_login:
-                login_path: connexionclient
-                check_path: connexionclient
+                login_path: connexion
+                check_path: connexion
             logout:
                 path:  /logout
-                target: /connexionclient
+                target: /accueil
             
     role_hierarchy:
         ROLE_ADMIN:      ROLE_USER
@@ -32,4 +32,6 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         - { path: ^/admin, roles: ROLE_ADMIN }
-        - { path: ^/client, roles: ROLE_USER }
+        - { path: ^/medecin, roles: ROLE_MEDECIN }
+        - { path: ^/pharmacie, roles: ROLE_PHARMA }
+        - { path: ^/client, roles: ROLE_PATIENT }

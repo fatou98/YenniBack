@@ -15,13 +15,13 @@
   <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700'>
 
   <!-- Theme CSS -->
-  <link rel="stylesheet" type="text/css" href="assets/skin/default_skin/css/theme.css">
+  <link rel="stylesheet" type="text/css" href="{{asset('assets/skin/default_skin/css/theme.css')}}">
 
   <!-- Admin Forms CSS -->
-  <link rel="stylesheet" type="text/css" href="assets/admin-tools/admin-forms/css/admin-forms.css">
+  <link rel="stylesheet" type="text/css" href="{{asset('assets/admin-tools/admin-forms/css/admin-forms.css')}}">
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="assets/img/favicon.ico">
+  <link rel="shortcut icon" href="{{asset('assets/img/favicon.ico')}}">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -47,16 +47,20 @@
           <!-- Login Logo -->
           <div class="row table-layout">
             <a href="dashboard.html" title="Return to Dashboard">
-              <img src="assets/img/logos/logo.png" title="AdminDesigns Logo" class="center-block img-responsive" style="max-width: 275px;">
+              <img src="{{asset('assets/img/logos/logo.png')}}" title="AdminDesigns Logo" class="center-block img-responsive" style="max-width: 275px;">
             </a>
           </div>
 
           <!-- Login Panel/Form -->
-          <div class="panel mt30 mb25">
-
+          <div class="panel mt30 mb25" style="padding:50px;">
+<div class="panel-body bg-light p25 pb15">
 {% block body %}{% endblock %}
-
-
+</div>
+<style>
+.gui-input{
+  margin-bottom:30px;
+}
+</style>
           </div>
 
           <!-- Registration Links -->
@@ -91,13 +95,13 @@
   <!-- BEGIN: PAGE SCRIPTS -->
 
   <!-- jQuery -->
-  <script src="vendor/jquery/jquery-1.11.1.min.js"></script>
-  <script src="vendor/jquery/jquery_ui/jquery-ui.min.js"></script>
+  <script src="{{asset('vendor/jquery/jquery-1.11.1.min.js')}}"></script>
+  <script src="{{asset('vendor/jquery/jquery_ui/jquery-ui.min.js')}}"></script>
 
   <!-- Theme Javascript -->
-  <script src="assets/js/utility/utility.js"></script>
-  <script src="assets/js/demo/demo.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="{{asset('assets/js/utility/utility.js')}}"></script>
+  <script src="{{asset('assets/js/demo/demo.js')}}"></script>
+  <script src="{{asset('assets/js/main.js')}}"></script>
 
   <!-- Page Javascript -->
   <script type="text/javascript">

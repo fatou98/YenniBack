@@ -38,12 +38,12 @@ class PriseDerendezvous
     private $specialite;
     
  /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\structure")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Structure")
      * @ORM\JoinColumn(nullable=false)
      */
     private $structure;
      /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\client")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Client")
      * @ORM\JoinColumn(nullable=false)
      */
     private $client;
